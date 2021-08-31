@@ -1,9 +1,9 @@
 import React from 'react'
 import './topbar.scss'
 import {Person, Mail} from '@material-ui/icons'
-const Topbar = () => {
+const Topbar = ({menuOpen,setMenuOpen}) => {
     return (
-        <div className="topbar">
+        <div className={"topbar " + (menuOpen && "active")}>
             <div className="wrapper">
                 <div className="left">
                     <a href="#intro" className="logo">Dedi Irawan.</a>
@@ -17,7 +17,11 @@ const Topbar = () => {
                     </div>
                 </div>
                 <div className="right">
-                    hallo
+                    <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                        <span className="line1"></span>
+                        <span className="line2"></span>
+                        <span className="line3"></span>
+                    </div>
                 </div>
             </div>
         </div>
