@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './portfolio.scss'
 import PortfolioList from '../portfolioList/PortfolioList';
+import { webPortfolio,mobilePortfolio,designPortfolio } from '../../data';
+
 const Portfolio = () => {
     const [selected,setSelected] = useState('web')
+    const [data,setData] = useState([])
     const list = [
         {
            id: 'web',
@@ -17,6 +20,22 @@ const Portfolio = () => {
             title: 'Design'
         },
     ];
+
+    useEffect(() => {
+        switch(selected){
+            case "web":
+                setData(webPortfolio);
+                break;
+            case "mobile":
+                setData(mobilePortfolio);
+                break;
+            case "design":
+                setData(designPortfolio);
+                break;
+                default:
+                    setData(webPortfolio)
+        }
+    },[selected])
     return (
         <div className="portfolio" id="portfolio"> 
             <h1>Portfolio</h1>
@@ -27,38 +46,18 @@ const Portfolio = () => {
                 ))}
             </ul>
             <div className="container">
+                {data.map((d) => (
                 <div className="item">
-                    <img src="https://placeimg.com/150/150/tech"
+                    <img src={d.img}
                     alt="" />
-                    <h3>Banking App</h3>
+                    <h3>{d.title}</h3>
                 </div>
-                <div className="item">
-                    <img src="https://placeimg.com/150/150/tech"
-                    alt="" />
-                    <h3>Banking App</h3>
-                </div>
-                <div className="item">
-                    <img src="https://placeimg.com/150/150/tech"
-                    alt="" />
-                    <h3>Banking App</h3>
-                </div>
-                <div className="item">
-                    <img src="https://placeimg.com/150/150/tech"
-                    alt="" />
-                    <h3>Banking App</h3>
-                </div>
-                <div className="item">
-                    <img src="https://placeimg.com/150/150/tech"
-                    alt="" />
-                    <h3>Banking App</h3>
-                </div>
-                <div className="item">
-                    <img src="https://placeimg.com/150/150/tech"
-                    alt="" />
-                    <h3>Banking App</h3>
+                ))}
+                
+                
                 </div>
             </div>
-        </div>
+        
     ) 
 }
 
