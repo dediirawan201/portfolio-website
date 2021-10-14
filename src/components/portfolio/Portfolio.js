@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import './portfolio.scss'
 import PortfolioList from '../portfolioList/PortfolioList';
 import { webPortfolio,mobilePortfolio,designPortfolio } from '../../data';
+import { useHistory } from 'react-router-dom';
 
 const Portfolio = () => {
     const [selected,setSelected] = useState('web')
     const [data,setData] = useState([])
+    const history = useHistory();
+
     const list = [
         {
            id: 'web',
@@ -28,7 +31,7 @@ const Portfolio = () => {
                 break;
             case "mobile":
                 setData(mobilePortfolio);
-                break;
+                break; 
             case "design":
                 setData(designPortfolio);
                 break;
@@ -36,6 +39,10 @@ const Portfolio = () => {
                     setData(webPortfolio)
         }
     },[selected])
+
+    // const Halaman = () => {
+
+    // }
     return (
         <div className="portfolio" id="portfolio"> 
             <h1>Portfolio</h1>
@@ -47,10 +54,10 @@ const Portfolio = () => {
             </ul>
             <div className="container">
                 {data.map((d) => (
-                <div className="item">
+                <div className="item" onClick={() => history.push(`/web/${d.id}`)}>
                     <img src={d.img}
                     alt="" />
-                    <h3>{d.title}</h3>
+                    <h3>{d.title}</h3> 
                 </div>
                 ))}
                 

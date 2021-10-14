@@ -18,7 +18,7 @@ const Intro = () => {
             
             <div className="left">
                 <div className="imgContainer">
-                    <img src="assets/man.png" alt=""/>
+                    <img src="assets/dedi.png" alt=""/>
                 </div>
             </div>
             <div className="right">

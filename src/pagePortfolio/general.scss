@@ -1,0 +1,168 @@
+@import '../global.scss';
+
+.container-web{
+    margin-top: 50px;
+    padding: 20px;
+    color: rgb(103, 177, 206);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: skyblue;
+    text-align: center;
+    .wrapper{
+        width: 80%;
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .title{
+            @include mobile{
+                font-size: 20px;
+            }
+        }
+
+        .lineHr{
+            height: 2px;
+            background-color: rgb(103, 177, 206);;
+            width: 50%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .desc{
+            margin-top: 20px;
+            font-style: italic;
+            font-weight: bold;
+            width: 90%;
+            @include mobile{
+                font-size: 11px;
+
+            }
+        }
+
+        .fotoUtama{
+            width: 70%;
+            height: 89%;
+            margin-top: 20px;
+        }
+        .lineHr-2{
+            margin-top: 20px;
+            width: 90%;
+            height: 1px;
+            background-color: rgb(103, 177, 206);
+            border-radius: 3px;
+        }
+        .role{
+            margin-top: 20px;
+        }
+        .lineHr-3{
+            width: 60%;
+            margin-top: 20px;
+            height: 1px;
+            background-color: rgb(103, 177, 206);
+            border-radius: 3px;
+
+        }
+            .frontend{
+                margin-top: 10px;
+                font-size: 20px;
+            }
+
+            .tech{
+                margin-top: 30px;
+            }
+            .lineHr-4{
+                margin-top: 20px;
+                width: 60%;
+                height: 1px;
+                background-color: rgb(103, 177, 206);
+                border-radius: 3px;
+
+            }
+            .wrapper-tecno{
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 500px;
+                margin-bottom: 30px;
+                @include mobile{
+                    justify-content: center;
+                    margin-top: 20px;
+                }
+                .imgIcon{
+                    width: 70px;
+                    height: 70px;
+                    @include mobile{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+
+            .lineHr-5{
+                margin-top: 20px;
+                width: 60%;
+                height: 1px;
+                background-color: rgb(103, 177, 206);
+                border-radius: 3px;
+            }
+
+            .wrapper-tools{
+                margin-top: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                width: 90%;
+                margin-bottom: 30px;
+                flex-wrap: wrap;
+                @include mobile{
+                    margin-top: 20px;
+                    
+                }
+                .imgIcon{
+                    width: 70px;
+                    height: 70px;
+                    @include mobile{
+                        width: 40px;
+                        height: 40px;
+                        
+                    }
+                }
+            }
+
+            .button{
+                background-color: royalblue;
+                color: white;
+                width: 150px;
+                border: none;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 18px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                cursor: pointer;
+            }
+            .wrapper-smallIcon{
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                .imgIcon{
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 10px;
+                    @include mobile{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+            }
+
+    }
+
+}

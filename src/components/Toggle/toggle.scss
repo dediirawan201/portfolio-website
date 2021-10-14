@@ -1,0 +1,35 @@
+@import '../../global.scss';
+
+.t{
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    border: 1px solid #999;
+    background-color: white;
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    @include mobile{
+        left: 20px;
+        top: 10px;
+    }
+
+
+    .t-icon{
+        width: 15px;
+        height: 15px;
+    }
+
+    .t-button{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #999;
+        position: absolute;
+    }
+}
